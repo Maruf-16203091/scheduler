@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Scheduler from "./components/Scheduler";
 import Toolbar from "./components/Toolbar";
-import MessageArea from "./components/MessageArea";
 import "./App.css";
 
 const data = [
@@ -65,7 +64,6 @@ class App extends Component {
             onDataUpdated={this.logDataUpdate}
           />
         </div>
-        <MessageArea messages={messages} />
       </div>
     );
   }
