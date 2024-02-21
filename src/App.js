@@ -24,29 +24,6 @@ class App extends Component {
     messages: [],
   };
 
-  addMessage(message) {
-    const maxLogLength = 5;
-    const newMessage = { message };
-    const messages = [newMessage, ...this.state.messages];
-
-    if (messages.length > maxLogLength) {
-      messages.length = maxLogLength;
-    }
-    this.setState({ messages });
-  }
-
-  logDataUpdate = (action, ev, id) => {
-    const text = ev && ev.text ? ` (${ev.text})` : "";
-    const message = `event ${action}: ${id} ${text}`;
-    this.addMessage(message);
-  };
-
-  handleTimeFormatStateChange = (state) => {
-    this.setState({
-      currentTimeFormatState: state,
-    });
-  };
-
   render() {
     const { currentTimeFormatState, messages } = this.state;
     return (
